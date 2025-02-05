@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./components/Navbar";
+import CreateForm from "./components/CreateForm";
 
 const App = () => {
   return (
-<>
-<h1>app</h1>
-</>
-  )
-}
+    <>
+      <Navbar />
+      <CreateForm />
+    </>
+  );
+};
 
-export default App
+export default App;

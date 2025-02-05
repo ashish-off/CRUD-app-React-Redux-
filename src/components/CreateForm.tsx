@@ -1,0 +1,74 @@
+import React from "react";
+
+const CreateForm = () => {
+  return (
+    <div className="mx-auto block max-w-xl my-8 rounded-lg bg-white p-6 shadow-4">
+      <form>
+        <div className=" mb-6 flex items-center gap-2 ">
+          <label className="max-w-[90%] text-black ">Name</label>
+          <input
+            type="text"
+            className=" min-h-[auto] w-full rounded-lg border-0 bg-gray-100 px-4 py-3 outline-none "
+            placeholder=" Enter name"
+          />
+        </div>
+
+        <div className=" mb-6 flex items-center gap-2 ">
+          <label className="max-w-[90%] text-black ">Email</label>
+          <input
+            type="text"
+            className=" min-h-[auto] w-full rounded-lg border-0 bg-gray-100 px-4 py-3 outline-none "
+            placeholder=" Enter email"
+          />
+        </div>
+
+        <div className=" mb-6 flex items-center gap-2 ">
+          <label className="max-w-[90%] text-black mr-2 ">Age</label>
+          <input
+            type="text"
+            className=" min-h-[auto] w-full rounded-lg border-0 bg-gray-100 px-4 py-3 outline-none "
+            placeholder=" Enter age"
+          />
+        </div>
+
+        <div className=" mb-6 flex items-center gap-2 flex-col">
+          <label className="max-w-[90%] text-black mr-2 ">Discription</label>
+          <input
+            type="text"
+            className=" min-h-[4rem] w-full rounded-lg border-0 bg-gray-100 px-4 py-3 outline-none "
+            placeholder=" Write few words...."
+          />
+        </div>
+
+        <div className=" flex items-center gap-8 justify-center">
+          <div className="flex items-center ">
+            <label className="max-w-[90%] text-black mr-2 ">Male</label>
+            <input type="radio" name="gender" />
+          </div>
+
+          <div className="flex items-center ">
+            <label className="max-w-[90%] text-black mr-2 ">Female</label>
+            <input type="radio" name="gender" />
+          </div>
+
+          <div className="flex items-center ">
+            <label className="max-w-[90%] text-black mr-2  ">Other</label>
+            <input type="radio" name="gender" />
+          </div>
+        </div>
+
+<div className="flex justify-center mt-6 w-full">
+<button
+          type="submit"
+          className=" border-none py-2 px-16 rounded-xl bg-gray-600 text-white font-semibold hover:bg-gray-500 active:bg-gray-600 "
+        >
+          Post
+        </button>
+</div>
+        
+      </form>
+    </div>
+  );
+};
+
+export default CreateForm;
