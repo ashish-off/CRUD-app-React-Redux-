@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="flex justify-between px-20 pt-8 pb-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
+      <nav className="flex justify-between px-20 pt-4 pb-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
         <h1 className="text-xl text-gray-800 font-bold">React-redux CRUD</h1>
         <div className="flex items-center md:gap-4">
           <div className="flex items-center bg-gray-100 py-3 px-6 rounded-3xl ">
