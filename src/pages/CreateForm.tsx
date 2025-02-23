@@ -86,30 +86,33 @@ const CreateForm = () => {
 
         <div className=" flex items-center gap-8 justify-center">
           <div className="flex items-center ">
-            <label className="max-w-[90%] text-black mr-2 ">Male</label>
+            <label htmlFor="Male" className="max-w-[90%] text-black mr-2 ">Male</label>
             <input
               type="radio"
               name="gender"
+              id="Male"
               value="Male"
               onChange={getUserData}
             />
           </div>
 
           <div className="flex items-center ">
-            <label className="max-w-[90%] text-black mr-2 ">Female</label>
+            <label htmlFor="Female" className="max-w-[90%] text-black mr-2 ">Female</label>
             <input
               type="radio"
               name="gender"
+              id="Female"
               value="Female"
               onChange={getUserData}
             />
           </div>
 
           <div className="flex items-center ">
-            <label className="max-w-[90%] text-black mr-2  ">Other</label>
+            <label htmlFor="Other" className="max-w-[90%] text-black mr-2  ">Other</label>
             <input
               type="radio"
               name="gender"
+              id="Other"
               value="Other"
               onChange={getUserData}
             />

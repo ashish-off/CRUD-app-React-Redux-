@@ -14,7 +14,7 @@ const Read = () => {
   if (loading) {
     return <h1 className="text-center text-5xl font-semibold transition-all duration-200 mt-50">Loading... </h1>;
   }
-  
+
   return (
     <div>
       <h1 className="text-2xl font-semibold text-center mt-4">All Information</h1>
