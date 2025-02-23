@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { RootState } from "../app/Store";
 
 const Navbar = () => {
+  const allUsers = useSelector((state : RootState) => state.userStore.users);
   return (
     <div>
       <nav className="flex justify-between px-20 pt-4 pb-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
@@ -42,7 +45,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                All Post
+                All Post ({allUsers.length})
               </NavLink>
             </li>
             <li className="font-semibold text-gray-700 cursor-pointer">
