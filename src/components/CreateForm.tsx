@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 const CreateForm = () => {
   const [users, setUsers] = useState({});
   
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const getUserData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setUsers({
@@ -27,7 +27,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl border-2 border-zinc-300">
       <form onSubmit={handleSubmit}>
         <h1 className="text-center text-2xl font-semibold mb-6 ">
-          Make a post
+          Add New User Detail
         </h1>
 
         <div className=" mb-6 flex items-center gap-2 ">
