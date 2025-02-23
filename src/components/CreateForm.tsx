@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { createUser } from "../features/UserDetailSice";
 
 const CreateForm = () => {
   const [users, setUsers] = useState({});
-  
-  // const dispatch = useDispatch();
 
-  const getUserData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const dispatch = useDispatch();
+
+  const getUserData = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setUsers({
       ...users,
       [e.target.name]: e.target.value,
     });
   };
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(users);
 
-  // dispatch()
-
-
-}
-
+    dispatch(createUser(users));
+  };
 
   return (
     <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl border-2 border-zinc-300">
@@ -76,17 +76,32 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         <div className=" flex items-center gap-8 justify-center">
           <div className="flex items-center ">
             <label className="max-w-[90%] text-black mr-2 ">Male</label>
-            <input type="radio" name="gender" value="Male" onChange={getUserData} />
+            <input
+              type="radio"
+              name="gender"
+              value="Male"
+              onChange={getUserData}
+            />
           </div>
 
           <div className="flex items-center ">
             <label className="max-w-[90%] text-black mr-2 ">Female</label>
-            <input type="radio" name="gender" value="Female" onChange={getUserData} />
+            <input
+              type="radio"
+              name="gender"
+              value="Female"
+              onChange={getUserData}
+            />
           </div>
 
           <div className="flex items-center ">
             <label className="max-w-[90%] text-black mr-2  ">Other</label>
-            <input type="radio" name="gender" value= "Other" onChange={getUserData} />
+            <input
+              type="radio"
+              name="gender"
+              value="Other"
+              onChange={getUserData}
+            />
           </div>
         </div>
 
