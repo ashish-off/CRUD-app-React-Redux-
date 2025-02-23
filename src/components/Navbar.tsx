@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -28,8 +30,36 @@ const Navbar = () => {
             />
           </div>
           <ul className="flex items-center space-x-6">
-            <li className="font-semibold text-gray-700 cursor-pointer">All Post</li>
-            <li className="font-semibold text-gray-700 cursor-pointer">Create Post</li>
+            <li className="font-semibold text-gray-700 cursor-pointer">
+              {" "}
+              <NavLink
+                to={"/read"}
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "text-black border-gray-400 border-b-2 transition-all duration-150"
+                      : "text-gray-700"
+                  }`
+                }
+              >
+                All Post
+              </NavLink>
+            </li>
+            <li className="font-semibold text-gray-700 cursor-pointer">
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "text-black border-b-2 border-gray-400 transition-all duration-150"
+                      : "text-gray-700"
+                  }`
+                }
+              >
+                {" "}
+                Create Post
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>

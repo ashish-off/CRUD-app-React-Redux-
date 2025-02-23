@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../features/UserDetailSice";
 import { userType } from "../type";
+import { useNavigate } from "react-router-dom";
+
 
 const CreateForm = () => {
   const [users, setUsers] = useState<userType>({
@@ -11,7 +13,8 @@ const CreateForm = () => {
     gender: "",
     description: "",
   });
-
+  
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
   const getUserData = (
@@ -27,16 +30,17 @@ const CreateForm = () => {
     e.preventDefault();
     console.log(users);
 
-    dispatch(createUser(users) as any); 
+    dispatch(createUser(users) as any);
+
+    navigate('/read');
   };
 
   return (
     <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl border-2 border-zinc-300">
+      <h1 className="text-center text-2xl font-semibold mb-6 ">
+        Add New User Detail
+      </h1>
       <form onSubmit={handleSubmit}>
-        <h1 className="text-center text-2xl font-semibold mb-6 ">
-          Add New User Detail
-        </h1>
-
         <div className=" mb-6 flex items-center gap-2 ">
           <label className="max-w-[90%] text-black ">Name</label>
           <input
