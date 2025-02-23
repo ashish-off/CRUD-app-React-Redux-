@@ -2,9 +2,16 @@ import {
   createSlice,
   createAsyncThunk,
 } from "@reduxjs/toolkit";
+import { userDetailSliceType, userType } from "../type";
+
+const initialState : userDetailSliceType = {
+  users: [],
+  loading: false,
+  error: null,
+};
 
 //create action
-export const createUser = createAsyncThunk("createUser", async (data, {rejectWithValue}) => {
+export const createUser = createAsyncThunk("createUser", async (data : userType , {rejectWithValue}) => {
   const response = await fetch(
     "https://67a23a30409de5ed5254bc5d.mockapi.io/ashishcrud",
     {
@@ -29,11 +36,7 @@ export const createUser = createAsyncThunk("createUser", async (data, {rejectWit
 
 export const userDetailSlice = createSlice({
   name: "userDetails",
-  initialState: {
-    users: [],
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

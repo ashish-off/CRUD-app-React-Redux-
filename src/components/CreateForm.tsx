@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../features/UserDetailSice";
+import { userType } from "../type";
 
 const CreateForm = () => {
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState<userType>({
+    name: "",
+    email: "",
+    age: "0",
+    gender: "",
+    description: "",
+  });
 
   const dispatch = useDispatch();
 
@@ -20,7 +27,7 @@ const CreateForm = () => {
     e.preventDefault();
     console.log(users);
 
-    dispatch(createUser(users));
+    dispatch(createUser(users) as any); 
   };
 
   return (
