@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import CreateForm from "./components/CreateForm";
+import CreateForm from "./pages/CreateForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Read from "./components/Read";
+import Read from "./pages/Read";
 
 const App = () => {
   return (
