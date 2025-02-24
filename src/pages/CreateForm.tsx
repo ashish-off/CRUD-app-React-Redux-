@@ -4,7 +4,6 @@ import { createUser } from "../features/UserDetailSice";
 import { userType } from "../type";
 import { useNavigate } from "react-router-dom";
 
-
 const CreateForm = () => {
   const [users, setUsers] = useState<userType>({
     name: "",
@@ -12,9 +11,10 @@ const CreateForm = () => {
     age: "0",
     gender: "",
     description: "",
+    id: "",
   });
-  
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const getUserData = (
@@ -32,7 +32,7 @@ const CreateForm = () => {
 
     dispatch(createUser(users) as any);
 
-    navigate('/read');
+    navigate("/read");
   };
 
   return (
@@ -86,7 +86,9 @@ const CreateForm = () => {
 
         <div className=" flex items-center gap-8 justify-center">
           <div className="flex items-center ">
-            <label htmlFor="Male" className="max-w-[90%] text-black mr-2 ">Male</label>
+            <label htmlFor="Male" className="max-w-[90%] text-black mr-2 ">
+              Male
+            </label>
             <input
               type="radio"
               name="gender"
@@ -97,7 +99,9 @@ const CreateForm = () => {
           </div>
 
           <div className="flex items-center ">
-            <label htmlFor="Female" className="max-w-[90%] text-black mr-2 ">Female</label>
+            <label htmlFor="Female" className="max-w-[90%] text-black mr-2 ">
+              Female
+            </label>
             <input
               type="radio"
               name="gender"
@@ -108,7 +112,9 @@ const CreateForm = () => {
           </div>
 
           <div className="flex items-center ">
-            <label htmlFor="Other" className="max-w-[90%] text-black mr-2  ">Other</label>
+            <label htmlFor="Other" className="max-w-[90%] text-black mr-2  ">
+              Other
+            </label>
             <input
               type="radio"
               name="gender"

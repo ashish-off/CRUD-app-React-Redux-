@@ -4,7 +4,11 @@ export interface userType {
   age: string;
   gender: string;
   description: string;
+  id : string;
 }
+
+// export interface readUserType extends userType {
+// }
 
 export interface userDetailSliceType {
   users: userType[];

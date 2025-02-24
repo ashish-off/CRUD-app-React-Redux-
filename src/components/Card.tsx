@@ -6,20 +6,27 @@ interface cardPropType {
 }
 
 const Card: React.FC<cardPropType> = ({ user }) => {
+  const [showMore, setShowMore] = React.useState(false);
+
   return (
     <div className="bg-gray-200 w-xs py-2 px-4 flex flex-col justify-center">
       <main className="mb-2 text-lg">
         <h1 className="text-xl font-semibold text-center mb-2">{user.name}</h1>
-        <h1>Email : {user.email}</h1>
-        <h1>Age: {user.age}</h1>
         <h1>Gender : {user.gender}</h1>
+        <h1>Age: {user.age}</h1>
+        
+        {showMore && (
+          <div>
+            <h1>Email : {user.email}</h1>
+            <p className="mb-2 text-lg text-gray-700">{user.description}</p>
+          </div>
+        )}
       </main>
-      <p className="mb-2">{user.description}</p>
 
       <div className="flex justify-center gap-4 items-center text-gray-600 font-semibold">
-        <a href="#">View</a>
-        <a href="#">edit</a>
-        <a href="#">delete</a>
+        <button onClick={() => setShowMore(!showMore)}>View</button>
+        <button>edit</button>
+        <button>delete</button>
       </div>
     </div>
   );
