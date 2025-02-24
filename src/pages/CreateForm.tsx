@@ -8,7 +8,7 @@ const CreateForm = () => {
   const [users, setUsers] = useState<userType>({
     name: "",
     email: "",
-    age: "0",
+    age: "",
     gender: "",
     description: "",
     id: "",

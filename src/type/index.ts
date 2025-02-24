@@ -7,8 +7,6 @@ export interface userType {
   id : string;
 }
 
-// export interface readUserType extends userType {
-// }
 
 export interface userDetailSliceType {
   users: userType[];

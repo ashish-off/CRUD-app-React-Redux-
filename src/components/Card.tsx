@@ -2,6 +2,7 @@ import React from "react";
 import { userType } from "../type";
 import { useDispatch } from "react-redux";
 import { deleteUser } from "../features/UserDetailSice";
+import { Link } from "react-router-dom";
 
 interface cardPropType {
   user: userType;
@@ -28,7 +29,7 @@ const Card: React.FC<cardPropType> = ({ user }) => {
 
       <div className="flex justify-center gap-4 items-center text-gray-600 font-semibold">
         <button onClick={() => setShowMore(!showMore)}>View</button>
-        <button>edit</button>
+        <Link to={`/edit/${user.id}`}>Edit</Link >
         <button onClick={() => dispatch(deleteUser(user.id) as any)}>delete</button>
       </div>
     </div>
