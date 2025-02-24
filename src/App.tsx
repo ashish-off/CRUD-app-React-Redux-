@@ -3,19 +3,20 @@ import Navbar from "./components/Navbar";
 import CreateForm from "./pages/CreateForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Read from "./pages/Read";
+import Edit from "./pages/Edit";
 
 const App = () => {
   return (
     <>
-<BrowserRouter>
-<Navbar/>
+      <BrowserRouter>
+        <Navbar />
 
-<Routes>
-  <Route  path="/" element={<CreateForm />} />
-  <Route  path="/read" element={<Read />} />
-</Routes>
-
-</BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CreateForm />} />
+          <Route path="/read" element={<Read />} />
+          <Route path="/edit/:id" element={<Edit />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
