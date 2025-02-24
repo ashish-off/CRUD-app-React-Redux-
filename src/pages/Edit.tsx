@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { userType } from "../type";
-import {  useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/Store";
+import { updateUserEdit } from "../features/UserDetailSice";
 
 const Edit = () => {
   const [updateUser, setUpdateUser] = useState<userType>({
@@ -15,7 +16,9 @@ const Edit = () => {
   });
 
   const { users, loading } = useSelector((state: RootState) => state.userStore);
+  const dispatch = useDispatch();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
@@ -27,11 +30,17 @@ const Edit = () => {
   const getUserData = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    console.log(e.target.value);
-  };
+    setUpdateUser({
+      ...updateUser,
+      [e.target.name]: e.target.value,
+  });
+}
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    dispatch(updateUserEdit(updateUser) as any);
+    navigate("/read");
   };
 
   return (

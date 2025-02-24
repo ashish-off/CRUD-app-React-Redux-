@@ -75,6 +75,36 @@ export const deleteUser = createAsyncThunk(
   }
 );
 
+//update action
+export const updateUserEdit = createAsyncThunk(
+  "updateUserEdit",
+  async (data: userType, { rejectWithValue }) => {
+
+  console.log("updated data", data);
+  
+    const response = await fetch(
+      `https://67a23a30409de5ed5254bc5d.mockapi.io/ashishcrud/${data.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    try {
+      if (response.ok) {
+        const result = await response.json();
+        return result;
+      }
+    } catch (error) {
+      console.log(error);
+      return rejectWithValue(error);
+    }
+  }
+);
+
 export const userDetailSlice = createSlice({
   name: "userDetails",
   initialState,
@@ -93,6 +123,7 @@ export const userDetailSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+
       //read operations
       .addCase(showUser.pending, (state) => {
         state.loading = true;
@@ -105,6 +136,7 @@ export const userDetailSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+
       //delete operations
       .addCase(deleteUser.pending, (state) => {
         state.loading = true;
@@ -120,7 +152,25 @@ export const userDetailSlice = createSlice({
       .addCase(deleteUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+
+      //update operations
+      .addCase(updateUserEdit.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(updateUserEdit.fulfilled, (state, action) => {
+        state.loading = false;
+        const { id } = action.payload;
+        if (id) {
+          state.users = state.users.map((user) =>
+            user.id === id ? { ...user, ...action.payload } : user
+          );
+        }
+      })
+      .addCase(updateUserEdit.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
   },
 });
 
