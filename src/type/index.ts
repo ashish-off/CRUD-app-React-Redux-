@@ -4,12 +4,12 @@ export interface userType {
   age: string;
   gender: string;
   description: string;
-  id : string;
+  id: string;
 }
-
 
 export interface userDetailSliceType {
   users: userType[];
   loading: boolean;
   error: unknown | string;
+  searchQuery: string;
 }

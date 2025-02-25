@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { RootState } from "../app/Store";
+import { useEffect, useState } from "react";
+import { searchUser } from "../features/UserDetailSice";
 
 const Navbar = () => {
   const allUsers = useSelector((state : RootState) => state.userStore.users);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchUser(searchQuery));
+
+  }, [searchQuery]);
   return (
+
     <div>
       <nav className="flex justify-between px-20 pt-4 pb-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
         <h1 className="text-xl text-gray-800 font-bold">React-redux CRUD</h1>
@@ -28,6 +39,8 @@ const Navbar = () => {
               className="ml-2 outline-none bg-transparent"
               type="text"
               name="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               id="search"
               placeholder="Search..."
             />

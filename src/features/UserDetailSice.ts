@@ -5,6 +5,7 @@ const initialState: userDetailSliceType = {
   users: [],
   loading: false,
   error: null,
+  searchQuery: "",
 };
 
 //create action
@@ -79,9 +80,6 @@ export const deleteUser = createAsyncThunk(
 export const updateUserEdit = createAsyncThunk(
   "updateUserEdit",
   async (data: userType, { rejectWithValue }) => {
-
-  console.log("updated data", data);
-  
     const response = await fetch(
       `https://67a23a30409de5ed5254bc5d.mockapi.io/ashishcrud/${data.id}`,
       {
@@ -108,7 +106,13 @@ export const updateUserEdit = createAsyncThunk(
 export const userDetailSlice = createSlice({
   name: "userDetails",
   initialState,
-  reducers: {},
+  reducers: {
+    searchUser : (state, action) => {
+      state.searchQuery = action.payload;
+      console.log(state.searchQuery);
+      
+    }
+  },
   extraReducers: (builder) => {
     builder
       //create operations
@@ -170,10 +174,10 @@ export const userDetailSlice = createSlice({
       .addCase(updateUserEdit.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      })
+      });
   },
 });
 
 export default userDetailSlice.reducer;
 
-//29:38
+export const { searchUser } = userDetailSlice.actions;
