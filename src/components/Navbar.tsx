@@ -49,7 +49,7 @@ const Navbar = () => {
             <li className="font-semibold text-gray-700 cursor-pointer">
               {" "}
               <NavLink
-                to={"/read"}
+                to={"/"}
                 className={({ isActive }) =>
                   `${
                     isActive
@@ -63,7 +63,7 @@ const Navbar = () => {
             </li>
             <li className="font-semibold text-gray-700 cursor-pointer">
               <NavLink
-                to={"/"}
+                to={"/create"}
                 className={({ isActive }) =>
                   `${
                     isActive

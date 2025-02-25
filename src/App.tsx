@@ -12,8 +12,8 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<CreateForm />} />
-          <Route path="/read" element={<Read />} />
+          <Route path="/create" element={<CreateForm />} />
+          <Route path="/" element={<Read />} />
           <Route path="/edit/:id" element={<Edit />} />
         </Routes>
       </BrowserRouter>
