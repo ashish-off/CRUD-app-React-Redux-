@@ -32,7 +32,7 @@ const CreateForm = () => {
 
     dispatch(createUser(users) as any);
 
-    navigate("/read");
+    navigate("/");
   };
 
   return (

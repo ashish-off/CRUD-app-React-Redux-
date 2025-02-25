@@ -110,7 +110,6 @@ export const userDetailSlice = createSlice({
     searchUser : (state, action) => {
       state.searchQuery = action.payload;
       console.log(state.searchQuery);
-      
     }
   },
   extraReducers: (builder) => {

@@ -40,7 +40,7 @@ const Edit = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(updateUserEdit(updateUser) as any);
-    navigate("/read");
+    navigate("/");
   };
 
   return (
