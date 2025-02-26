@@ -28,9 +28,24 @@ const Card: React.FC<cardPropType> = ({ user }) => {
       </main>
 
       <div className="flex justify-center gap-4 items-center text-gray-600 font-semibold">
-        <button onClick={() => setShowMore(!showMore)}>View</button>
-        <Link to={`/edit/${user.id}`}>Edit</Link >
-        <button onClick={() => dispatch(deleteUser(user.id) as any)}>delete</button>
+        <button
+          className="transition-all duration-150 hover:text-black hover:scale-105 active:text-gray-600 active:scale-95"
+          onClick={() => setShowMore(!showMore)}
+        >
+          View
+        </button>
+        <Link
+          to={`/edit/${user.id}`}
+          className="transition-all duration-150 hover:text-black hover:scale-105 active:text-gray-600 active:scale-95"
+        >
+          Edit
+        </Link>
+        <button
+          className="transition-all duration-150 hover:text-black hover:scale-105 active:text-gray-600 active:scale-95"
+          onClick={() => dispatch(deleteUser(user.id) as any)}
+        >
+          delete
+        </button>
       </div>
     </div>
   );
