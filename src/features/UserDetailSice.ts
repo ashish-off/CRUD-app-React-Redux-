@@ -107,9 +107,8 @@ export const userDetailSlice = createSlice({
   name: "userDetails",
   initialState,
   reducers: {
-    searchUser : (state, action) => {
-      state.searchQuery = action.payload;
-      console.log(state.searchQuery);
+    searchUser : (state, action : {payload : string}) => {
+      state.searchQuery = action.payload.trim();
     }
   },
   extraReducers: (builder) => {
