@@ -28,7 +28,6 @@ const CreateForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(users);
 
     dispatch(createUser(users) as any);
 
@@ -36,7 +35,7 @@ const CreateForm = () => {
   };
 
   return (
-    <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl border-2 border-zinc-300">
+    <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl bg-gray-400/20">
       <h1 className="text-center text-2xl font-semibold mb-6 ">
         Add New User Detail
       </h1>
@@ -91,7 +90,7 @@ const CreateForm = () => {
             </label>
             <input
               type="radio"
-              name="gender"
+              name="gender" 
               id="Male"
               value="Male"
               onChange={getUserData}

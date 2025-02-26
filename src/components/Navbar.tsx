@@ -5,22 +5,20 @@ import { useEffect, useState } from "react";
 import { searchUser } from "../features/UserDetailSice";
 
 const Navbar = () => {
-  const allUsers = useSelector((state : RootState) => state.userStore.users);
+  const allUsers = useSelector((state: RootState) => state.userStore.users);
   const [searchQuery, setSearchQuery] = useState("");
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(searchUser(searchQuery));
-
   }, [searchQuery]);
   return (
-
     <div>
-      <nav className="flex justify-between px-20 pt-4 pb-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
-        <h1 className="text-xl text-gray-800 font-bold">React-redux CRUD</h1>
+      <nav className="flex justify-between px-5 sm:px-10 py-1 sm:py-4 items-center bg-transparent border-b-2 border-gray-400 shadow-sm ">
+        <h1 className="text-base sm:text-xl mr-2 text-gray-800 font-bold">CreateAsyncThunk CRUD</h1>
         <div className="flex items-center md:gap-4">
-          <div className="flex items-center bg-gray-100 py-3 px-6 rounded-3xl ">
+          <div className="flex items-center bg-gray-100 py-2 px-4 sm:py-3 sm:px-6 rounded-3xl ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 pt-0.5 text-gray-600"
@@ -36,7 +34,7 @@ const Navbar = () => {
               />
             </svg>
             <input
-              className="ml-2 outline-none bg-transparent"
+              className="ml-1 sm:ml-2 outline-none bg-transparent w-10 sm:w-25 md:w-50 placeholder:text-sm md:placeholder:text-base "
               type="text"
               name="search"
               value={searchQuery}
@@ -45,7 +43,7 @@ const Navbar = () => {
               placeholder="Search..."
             />
           </div>
-          <ul className="flex items-center space-x-6">
+          <ul className="flex items-center ml-2 space-x-4 sm:space-x-6">
             <li className="font-semibold text-gray-700 cursor-pointer">
               {" "}
               <NavLink
@@ -53,8 +51,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `${
                     isActive
-                      ? "text-black border-gray-400 border-b-2 transition-all duration-150"
-                      : "text-gray-700"
+                      ? "text-sm text-black border-gray-400 border-b-2 transition-all duration-150"
+                      : "text-sm text-gray-700"
                   }`
                 }
               >
@@ -67,8 +65,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `${
                     isActive
-                      ? "text-black border-b-2 border-gray-400 transition-all duration-150"
-                      : "text-gray-700"
+                      ? "text-sm text-black border-b-2 border-gray-400 transition-all duration-150"
+                      : "text-sm text-gray-700"
                   }`
                 }
               >
