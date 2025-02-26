@@ -104,7 +104,13 @@ const Read = () => {
 
       <div className="flex flex-wrap gap-4 items-start justify-center w-[90vw] my-4 mx-auto ">
         {users &&
-          filteredUsers.map((user) => <Card key={user.id} user={user} />)}
+          (filteredUsers.length === 0 ? (
+            <h1 className="text-center text-5xl font-semibold transition-all duration-200 mt-50">
+              No Data Found{" "}
+            </h1>
+          ) : (
+            filteredUsers.map((user) => <Card key={user.id} user={user} />)
+          ))}
       </div>
     </div>
   );
