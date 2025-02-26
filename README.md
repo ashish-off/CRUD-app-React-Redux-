@@ -1,50 +1,50 @@
-## CRUD APP using Redux Toolkit and createAsyncThunk.
+# CRUD App with React and Redux Toolkit
 
+This is a CRUD (Create, Read, Update, Delete) application built using React and Redux Toolkit with `createAsyncThunk` for handling asynchronous operations.
 
-# React + TypeScript + Vite
+## Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
- 
+- **Create User**: Add new user details including name, email, age, gender, and description.
+- **Read Users**: Display a list of all users with search and filter functionality.
+- **Update User**: Edit existing user details.
+- **Delete User**: (Assumed feature) Delete a user.
+- **Navigation**: Navigation bar with links to create and read pages.
+- **State Management**: Uses Redux Toolkit for state management.
+- **Routing**: Uses React Router for navigation between different pages.
+- **Responsive Design**: Designed to be responsive and works well on different screen sizes.
+- **MockAPI Integration**: Uses [MockAPI](https://mockapi.io/) to simulate backend operations.
 
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ashish-off/CRUD-rtk-createAsyncThunk.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd crud_app_react
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Usage
 
-- Configure the top-level `parserOptions` property like this:
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## API
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This project uses a mock API from [MockAPI](https://mockapi.io/) to demonstrate the usage of `createAsyncThunk` for handling asynchronous operations. The API endpoints include:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- `GET /users`: Fetch all users.
+- `POST /users`: Create a new user.
+- `PUT /users/:id`: Update an existing user.
+- `DELETE /users/:id`: Delete a user.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+
+This project is licensed under the MIT License.
