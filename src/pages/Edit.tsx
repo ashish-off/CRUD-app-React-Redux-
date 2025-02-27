@@ -46,7 +46,7 @@ const Edit = () => {
   return (
     <div className="mx-auto block max-w-xl my-8 rounded-lg  p-6 shadow-2xl border-2 border-zinc-300">
       <h1 className="text-center text-2xl font-semibold mb-6 ">
-        Add New User Detail
+        Edit User Details
       </h1>
       <form onSubmit={handleSubmit}>
         <div className=" mb-6 flex items-center gap-2 ">

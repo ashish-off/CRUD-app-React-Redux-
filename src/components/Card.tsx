@@ -22,7 +22,7 @@ const Card: React.FC<cardPropType> = ({ user }) => {
         {showMore && (
           <div>
             <h1>Email : {user.email}</h1>
-            <pre className="my-2 text-lg text-gray-700">{user.description}</pre>
+            <pre className="my-2 text-lg text-gray-700 whitespace-pre-wrap break-words ">{user.description}</pre>
           </div>
         )}
       </main>
