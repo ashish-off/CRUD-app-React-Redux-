@@ -48,3 +48,8 @@ This project uses a mock API from [MockAPI](https://mockapi.io/) to demonstrate 
 ## License
 
 This project is licensed under the MIT License.
+
+## Preview 
+![Image](https://github.com/user-attachments/assets/8909931a-89e1-4292-9a25-ab7e9a001c86)
+
+![Image](https://github.com/user-attachments/assets/79162fa3-ad96-4337-8490-1c3c5bd5ab6e)
